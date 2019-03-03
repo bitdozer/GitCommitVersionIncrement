@@ -5,7 +5,7 @@ if [ -e .commit ]
     rm .commit
     git add version.txt 
 	git add version-dotted.txt 
-	git add version-dotted-carry.txt
+	git add version-dotted-carried.txt
     git commit --amend -C HEAD --no-verify
 fi
 exit
