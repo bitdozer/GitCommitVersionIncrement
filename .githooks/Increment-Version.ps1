@@ -1,21 +1,27 @@
-
-
-
-# increment integer
+# increment plain integer
 $file = "./version.txt"
-$fileVersion = (Get-Content $file | Select -First 1)
+if (Test-Path $file -PathType Leaf)
+{	$fileVersion = (Get-Content $file | Select -First 1) }
+else 
+{	$fileVersion = 0 }
 $fileVersion = [int]$fileVersion + 1
 $fileVersion | Set-Content $file
 
 # increment dotted
 $file = "./version-dotted.txt"
-$fileVersion = [version](Get-Content $file | Select -First 1)
+if (Test-Path $file -PathType Leaf)
+{	$fileVersion = [version](Get-Content $file | Select -First 1) }
+else 
+{	$fileVersion = [version]"0.0.0.0" }
 $newVersion = "{0}.{1}.{2}.{3}" -f [int]$fileVersion.Major, [int]$fileVersion.Minor, [int]$fileVersion.Build, ([int]$fileVersion.Revision + 1)
 $newVersion | Set-Content $file
 
-# increment dotted with carry
+# increment dotted with carry at >.9
 $file = "./version-dotted-carried.txt"
-$fileVersion = [version](Get-Content $file | Select -First 1)
+if (Test-Path $file -PathType Leaf)
+{	$fileVersion = [version](Get-Content $file | Select -First 1) }
+else 
+{	$fileVersion = [version]"0.0.0.0" }
 $majorVersion = [int]$fileVersion.Major
 $minorVersion = [int]$fileVersion.Minor
 $buildVersion = [int]$fileVersion.Build

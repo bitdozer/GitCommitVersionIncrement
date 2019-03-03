@@ -1,5 +1,8 @@
 
-References:
+### General
+Demonstrates incrementing plain text version files using a post-commit hook and PowerShell in Windows.
+
+### References
 
 Version increment hooks using info from here:
 
@@ -23,4 +26,4 @@ https://github.com/git-for-windows/git/issues/1420
 
 This was the only version that worked (Windows):
 
-git config --global core.hooksPath .\.githooks
+```git config --global core.hooksPath .\.githooks```
