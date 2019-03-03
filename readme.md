@@ -2,6 +2,12 @@
 ### General
 Demonstrates incrementing plain text version files using a post-commit hook and PowerShell in Windows.
 
+During each commit, the three version files are incremented and amended into the current commit.
+
+ - version.txt - integer versioning: 7, 8, 9, etc.
+ - version-dotted.txt - dotted versioning, e.g. 1.2.3.45
+ - version-dotted-carried.txt - dotted, minor, build, and revision roll over at 1.9.9.9 > 2.0.0.0
+
 ### References
 
 Version increment hooks using info from here:
