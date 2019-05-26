@@ -1,5 +1,4 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
-echo
 if [ -e .commit ]
     then
     rm .commit

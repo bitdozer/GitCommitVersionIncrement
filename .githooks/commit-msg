@@ -1,4 +1,5 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
 # remove this line or delete this script if you do not want the version number added to commit messages
-exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Commit-Msg.ps1" -commitfile $1
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Commit-Msg.ps1" -commitfile $1 -branch $BRANCH
 exit
