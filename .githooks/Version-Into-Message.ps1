@@ -1,9 +1,10 @@
 # increment prepend text
-# $file is -file input parameter
-if (Test-Path $file -PathType Leaf)
-{	$fileVersion = (Get-Content $file | Select -First 1) }
+# $commitfile is -commitfile input parameter
+param ($commitfile = $(throw "Commit message file is required."))
+if (Test-Path $commitfile -PathType Leaf)
+{	$fileVersion = (Get-Content $commitfile | Select -First 1) }
 else 
 {	$fileVersion = 0 }
 $fileVersion = "[r0000] " + $fileVersion
-$fileVersion | Set-Content $file
+$fileVersion | Set-Content $commitfile
 
