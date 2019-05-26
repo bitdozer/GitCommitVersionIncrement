@@ -1,5 +1,5 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
 echo
 touch .commit
-exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Increment-Version.ps1"
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Pre-Commit.ps1"
 exit
