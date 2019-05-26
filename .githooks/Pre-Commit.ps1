@@ -1,4 +1,7 @@
 # increment plain integer
+param (
+	$branch
+)
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)
 {	$fileVersion = (Get-Content $file | Select -First 1) }

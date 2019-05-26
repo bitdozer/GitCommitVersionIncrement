@@ -3,7 +3,6 @@ param (
 	$commitfile = $(throw "Commit message file is required."),
 	$branch
 )
-Write-Host $branch
 #prepend the version number (plain int version)
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)
