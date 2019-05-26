@@ -1,0 +1,6 @@
+#!C:/Program\ Files/Git/usr/bin/sh.exe
+echo
+--touch .commit
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Version-Into-Message.ps1 $1"
+pause
+exit
