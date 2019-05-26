@@ -1,6 +1,9 @@
 # $commitfile is -commitfile input parameter -- must be first non-comment line
-param ($commitfile = $(throw "Commit message file is required."))
-
+param (
+	$commitfile = $(throw "Commit message file is required."),
+	$branch
+)
+Write-Host $branch
 #prepend the version number (plain int version)
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)
