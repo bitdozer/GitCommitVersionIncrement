@@ -1,4 +1,4 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
-echo "arg 1 from shell:" $1
+# remove this line or delete this script if you do not want the version number added to commit messages
 exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Commit-Msg.ps1" -commitfile $1
 exit
