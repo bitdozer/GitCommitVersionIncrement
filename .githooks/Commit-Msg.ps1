@@ -1,19 +1,29 @@
 # increment prepend text
+# $commitfile is -commitfile input parameter
+Write-Host "Commit-Msg.ps1 invoked as: " -NoNewline
+Write-Host $MyInvocation.Line
+Write-Host $MyInvocation.UnboundArguments
+
+Write-Host "arg 1 from ps: " -NoNewline
+Write-Host $commitfile
+
+
+#param ($commitfile = $(throw "Commit message file is required."))
 
 #prepend the upcoing version number (plain int version)
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)
 {	
   $fileVersion = (Get-Content $file | Select -First 1) 
-  # $commitfile is -commitfile input parameter
-  param ($commitfile = $(throw "Commit message file is required."))
   if (Test-Path $commitfile -PathType Leaf)
   {	
     $commitmessage = (Get-Content $commitfile) 
+    Write-Host "loaded commit message"
   }
   else 
   {	
     $commitmessage = ""
+    Write-Host "no commit file"
   }
   $commitmessage = "[r" + $fileVersion  +"] " + $commitmessage
   # write the ammedned message back to the commitfile

@@ -1,6 +1,4 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
-echo
-#echo $1 > commit-msg.txt
+echo "arg 1 from shell:" $1
 exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Commit-Msg.ps1" -commitfile $1
-pause
 exit
