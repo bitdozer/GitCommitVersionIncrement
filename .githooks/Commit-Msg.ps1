@@ -7,6 +7,10 @@ Write-Host $MyInvocation.UnboundArguments
 Write-Host "arg 1 from ps: " -NoNewline
 Write-Host $commitfile
 
+param(
+        [Parameter(ValueFromPipelineByPropertyName)]
+        [string]$commitfile
+    )
 
 #param ($commitfile = $(throw "Commit message file is required."))
 
