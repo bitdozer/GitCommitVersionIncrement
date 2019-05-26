@@ -1,16 +1,15 @@
 # increment prepend text
-# $commitfile is -commitfile input parameter
+# $commitfile is -commitfile input parameter -- must be first line
+param ($commitfile = $(throw "Commit message file is required."))
+
 Write-Host "Commit-Msg.ps1 invoked as: " -NoNewline
 Write-Host $MyInvocation.Line
 Write-Host $MyInvocation.UnboundArguments
 
 
-Param([string]$commitfile)
-
 Write-Host "arg 1 from ps: " -NoNewline
 Write-Host $commitfile
 
-#param ($commitfile = $(throw "Commit message file is required."))
 
 #prepend the upcoing version number (plain int version)
 $file = "./version.txt"
