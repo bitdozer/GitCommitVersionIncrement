@@ -1,5 +1,5 @@
 # increment prepend text
-$file = $1
+# $file is -file input parameter
 if (Test-Path $file -PathType Leaf)
 {	$fileVersion = (Get-Content $file | Select -First 1) }
 else 
