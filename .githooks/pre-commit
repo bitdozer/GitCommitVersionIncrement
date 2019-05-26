@@ -1,5 +1,5 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
-echo
 touch .commit
-exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Increment-Version.ps1"
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.githooks\Pre-Commit.ps1" -branch $BRANCH
 exit

@@ -1,11 +1,12 @@
 #!C:/Program\ Files/Git/usr/bin/sh.exe
-echo
 if [ -e .commit ]
     then
     rm .commit
+    # add whichever version files you need based on what pre-commit updated
     git add version.txt 
-	git add version-dotted.txt 
-	git add version-dotted-carried.txt
+    git add version-dotted.txt 
+    git add version-dotted-carried.txt
+    # amend the current commit
     git commit --amend -C HEAD --no-verify
 fi
 exit
