@@ -3,6 +3,9 @@ param (
 	$commitfile = $(throw "Commit message file is required."),
 	$branch
 )
+# non-master* branches don't increment version
+if (!$branch.StartsWith("master"))
+  Exit
 #prepend the version number (plain int version)
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)

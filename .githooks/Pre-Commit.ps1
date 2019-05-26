@@ -2,6 +2,10 @@
 param (
 	$branch
 )
+# non-master* branches don't increment version
+if (!$branch.StartsWith("master"))
+  Exit
+
 $file = "./version.txt"
 if (Test-Path $file -PathType Leaf)
 {	$fileVersion = (Get-Content $file | Select -First 1) }
