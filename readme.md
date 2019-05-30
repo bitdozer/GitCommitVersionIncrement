@@ -24,7 +24,10 @@ https://www.visualstudiogeeks.com/DevOps/UsingPowerShellForGitHooksWithVstsGitOn
 
 How to commit the hooks in the repo by redirecting core.hooksPath
 
-https://www.visualstudiogeeks.com/DevOps/UsingGitHooksWithVstsGitOnWindows#githooks-oh-windows
+https://www.visualstudiogeeks.com/DevOps/UsingGitHooksWithVstsGitOnWindows#githooks-oh-windows (BAD)
+
+Archive of above:
+https://drive.google.com/file/d/1RxQqayZ9baHCdxsI9hpWKP9ox3mjo_6Y/view?usp=sharing
 
 How to figure out the correct core.hooksPath path syntax:
 
