@@ -36,3 +36,7 @@ https://github.com/git-for-windows/git/issues/1420
 This was the only version that worked (Windows):
 
 ```git config --global core.hooksPath .\.githooks```
+or
+```git config --local core.hooksPath .\.githooks```
+
+If using --local, you will have to re-issue the command each time you clone a new working copy.
